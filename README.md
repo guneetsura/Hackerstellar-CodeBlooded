@@ -7,3 +7,4 @@ This is a readme file, to be updated after completing the project.
 * Divya Nair
 * Guneet Sura (Team Leader)
 * Mayank Kulkarni
+* CSI-KJSCE
