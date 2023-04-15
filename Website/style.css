@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav {
+    background: #000;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+nav .logo {
+    order: 0;
+    position: relative;
+}
+
+nav .logo img {
+    height: 60px;
+    object-fit: contain;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    flex: 1;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 120%;
+    font-weight: 500;
+    padding: 0 3vw;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #EA2088;
+}
+
+nav .connect-wallet-btn {
+    background: #000;
+    border: 2px solid #EA2088;
+    color: #EA2088;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+nav .connect-wallet-btn:hover {
+    background: #EA2088;
+    color: #fff;
+    cursor: pointer;
+}
+
+nav .menu-btn {
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+#home {
+    background-color: #222222;
+    background: url("Assets/home-bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#home .container {
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 1.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #EA2088, #6e45e1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#home .container h1 span:before {
+    content: "";
+    animation: type 2s steps(20) infinite;
+    border-right: 0.08em solid #ffffff;
+    margin-right: 5px;
+}
+
+#home .container p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    width: 70%;
+}
+
+#about {
+    background-color: #222222;
+    /* background: url("Assets/about-bg.jpg") no-repeat center center fixed; */
+    background-size: cover;
+    height: calc(100vh);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#about .container {
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 1.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#about .container p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    width: 70%;
+}
+
+
+
+@keyframes type {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+
+
+@media (max-width: 1160px) {
+    nav ul {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        background: #000;
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        transition: all 0.5s ease;
+    }
+
+    nav ul.active {
+        left: 0;
+    }
+
+    nav ul li {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    nav ul li a {
+        padding: 20px;
+    }
+
+    nav .menu-btn {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    nav .logo {
+        margin-bottom: 20px;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    nav ul li a {
+        padding: 10px;
+    }
+
+    nav .menu-btn {
+        display: block;
+    }
+}
+
+@media (min-width: 768px) {
+    nav .logo {
+        margin-right: auto;
+    }
+}
