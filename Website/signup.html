@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Supply Chain Management</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <section>
+      <nav>
+        <div class="logo">
+          <a href="#index.html"><img src="Assets/logo.png" alt="Logo" /></a>
+        </div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+        <button class="signup-btn"><a href="login.html">Login</a></button>
+        <button class="signup-btn"><a href="signup.html">Sign Up</a></button>
+        <button class="connect-wallet-btn"><a href="connect.html" style="text-decoration: none; color: #fff;">Connect Wallet</a></button>
+        <div class="menu-btn">
+          <span>&#9776;</span>
+        </div>
+      </nav>
+    </section>
+    <section id="login">
+      <form class="login-form" method="post" action="">
+        <h1>Sign Up</h1>
+        <div class="input-container">
+          <input type="text" name="username" placeholder="Username" id="username" required />
+        </div>
+        <div class="input-container">
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            id="password"
+            required
+          />
+        </div>
+        <div class="input-container">
+            <input
+              type="password"
+              name="confirm-password"
+              placeholder="Confirm Password"
+              id="confirm-password"
+              required
+            />
+          </div>
+        <button class="login-btn" type="submit">Sign Up</button>
+        <p>Have an account already? <a href="login.html" style="color: #D2ACFF;">Login</a></p>
+      </form>
+    </section>
+  </body>
+</html>
