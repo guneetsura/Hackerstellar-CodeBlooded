@@ -101,8 +101,8 @@ nav .signup-btn a {
 
 .signup-btn {
     background: #000;
-    border: 2px solid #FF7958;
-    color: #FF7958;
+    border: 2px solid #EA2088;
+    color: #EA2088;
     padding: 10px 20px;
     border-radius: 30px;
     transition: all 0.3s ease;
@@ -110,7 +110,7 @@ nav .signup-btn a {
 }
 
 .signup-btn:hover {
-    background: #FF7958;
+    background: #EA2088;
     color: #fff;
     cursor: pointer;
 }
