@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <title>Web3 Metamask Login</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section>
+      <nav>
+        <div class="logo">
+          <a href="#index.html"><img src="Assets/logo.png" alt="Logo" /></a>
+        </div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="orders.html">Order</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+        <a href="connect.html" style="text-decoration: none; color: #fff"
+          ><button class="connect-wallet-btn">Connect Wallet</button></a
+        >
+        <div class="menu-btn">
+          <span>&#9776;</span>
+        </div>
+      </nav>
+    </section>
+    <section id="connect-wallet">
+      <div class="metamask-login">
+        <button id="loginButton" onclick="" class="mm-login-btn">
+          <span id="loginSpan">Login with MetaMask</span><i></i>
+        </button>
+        <p id="userWallet" class="wallet-hash"></p>
+      </div>
+    </section>
+    <script>
+      window.userWalletAddress = null;
+      const loginButton = document.getElementById("loginButton");
+      const userWallet = document.getElementById("userWallet");
+      const loginSpan = document.getElementById("loginSpan");
+
+      function toggleButton() {
+        if (!window.ethereum) {
+          loginButton.innerText = "MetaMask is not installed";
+          loginButton.classList.remove("bg-purple-500", "text-white");
+          loginButton.classList.add(
+            "bg-gray-500",
+            "text-gray-100",
+            "cursor-not-allowed"
+          );
+          return false;
+        }
+
+        loginButton.addEventListener("click", loginWithMetaMask);
+      }
+
+      async function loginWithMetaMask() {
+        const accounts = await window.ethereum
+          .request({ method: "eth_requestAccounts" })
+          .catch((e) => {
+            console.error(e.message);
+            return;
+          });
+        if (!accounts) {
+          return;
+        }
+
+        window.userWalletAddress = accounts[0];
+        userWallet.innerText = window.userWalletAddress;
+        loginSpan.innerText = "Sign out of MetaMask";
+
+        loginButton.removeEventListener("click", loginWithMetaMask);
+        setTimeout(() => {
+          loginButton.addEventListener("click", signOutOfMetaMask);
+        }, 200);
+      }
+
+      function signOutOfMetaMask() {
+        window.userWalletAddress = null;
+        userWallet.innerText = "";
+        loginSpan.innerText = "Login with MetaMask";
+
+        loginButton.removeEventListener("click", signOutOfMetaMask);
+        setTimeout(() => {
+          loginButton.addEventListener("click", loginWithMetaMask);
+        }, 200);
+      }
+
+      window.addEventListener("DOMContentLoaded", () => {
+        toggleButton();
+      });
+    </script>
+  </body>
+</html>
