@@ -1,7 +1,7 @@
 const http = require('http');
 const sdk = require('api')('@verbwire/v1.0#4psk2mplfwliyql');
 
-sdk.auth('sk_live_c71bc37b-6f12-4afb-9c31-ff2c3e5054bc');
+sdk.auth('sk_live_4330afcb-e137-4861-a239-41f8655f951a');
 sdk.postNftDeployDeploysimplecontract({
   chain: 'goerli',
   contractType: 'nft721',
